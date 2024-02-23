@@ -1,4 +1,4 @@
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaPhone } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 
 import styles from "./Footer.module.scss";
@@ -23,8 +23,20 @@ const Footer = () => {
             <h5>THEO DÕI</h5>
             <ul className={styles.list}>
               <li className={styles.listItem}>
-                <FaFacebook /> Facebook
+                <a
+                  className={styles.listItemLink}
+                  href="https://www.facebook.com/shophoa.eraflowers"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FaFacebook /> Facebook
+                </a>
               </li>
+              <ul className={styles.list}>
+                <li className={styles.listItem}>
+                  <FaPhone /> 0903 984 134
+                </li>
+              </ul>
             </ul>
           </div>
           <div className="col-12 col-md-6 col-xl-3">

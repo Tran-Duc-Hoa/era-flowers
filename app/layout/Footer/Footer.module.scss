@@ -1,8 +1,5 @@
 .footer {
-  background-color: rgba(
-    var(--bs-tertiary-bg-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+  background: rgb(240 242 245);
   border-top: 1px solid #ccc;
   padding: 2rem 0;
   margin-top: 50px;
@@ -18,4 +15,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.listItemLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
 }
