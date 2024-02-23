@@ -1,4 +1,8 @@
 .footer {
+  background-color: rgba(
+    var(--bs-tertiary-bg-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
   border-top: 1px solid #ddd;
   padding: 2rem 0;
   margin-top: 50px;

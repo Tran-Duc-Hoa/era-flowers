@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Carousel from "app/components/Carousel";
 import Bootstrap from "./Bootstrap";
 import styles from "./page.module.css";
 
@@ -9,58 +10,7 @@ export default function Home() {
     <>
       <main className={styles.main}>
         <div className="container-xxl">
-          <div
-            id="carouselExample"
-            className="carousel slide overflow-hidden mb-5"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img
-                  src="/images/era-flowers.jpg"
-                  className="d-block w-100 h-100"
-                  alt="..."
-                />
-              </div>
-              <div className="carousel-item">
-                <img
-                  src="/images/era-flowers.jpg"
-                  className="d-block w-100 h-100"
-                  alt="..."
-                />
-              </div>
-              <div className="carousel-item">
-                <img
-                  src="/images/era-flowers.jpg"
-                  className="d-block w-100 h-100"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
+          <Carousel />
 
           <h2 className="text-center">HOA SINH NHẬT</h2>
           <div className="row gy-3">

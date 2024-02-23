@@ -1,6 +1,6 @@
 import { FaFacebook } from "react-icons/fa";
-
 import { FiMapPin } from "react-icons/fi";
+
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
