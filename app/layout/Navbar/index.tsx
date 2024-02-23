@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="container-xxl">
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-xxl">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand from-red-to-amber fs-1" href="/">
               Era Flowers
             </a>
             <button

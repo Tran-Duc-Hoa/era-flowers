@@ -1,6 +1,10 @@
 .header {
+  width: 100%;
   background-color: rgba(
     var(--bs-tertiary-bg-rgb),
     var(--bs-bg-opacity)
   ) !important;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
