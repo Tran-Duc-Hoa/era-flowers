@@ -4,7 +4,11 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className="container-xxl">
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav
+          className={
+            "navbar navbar-expand-lg bg-body-tertiary " + styles.navbar
+          }
+        >
           <div className="container-xxl">
             <a className="navbar-brand from-red-to-amber fs-1" href="/">
               Era Flowers
