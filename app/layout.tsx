@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Era Flowers",
   description:
     "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
+  authors: [{ name: "Era Flowers" }],
+  keywords: ["era flowers"],
+  icons: [
+    {
+      url: "/favicon.jpg",
+    },
+  ],
 };
 
 export default function RootLayout({
