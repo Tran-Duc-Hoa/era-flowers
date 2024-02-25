@@ -24,6 +24,7 @@ const Footer = () => {
             <ul className={styles.list}>
               <li className={styles.listItem}>
                 <a
+                  title="Era Flowers Page"
                   className={styles.listItemLink}
                   href="https://www.facebook.com/shophoa.eraflowers"
                   target="_blank"
@@ -33,7 +34,7 @@ const Footer = () => {
                 </a>
               </li>
               <ul className={styles.list}>
-                <li className={styles.listItem}>
+                <li className={styles.listItem} title="Hotline">
                   <FaPhone /> 0903 984 134
                 </li>
               </ul>
