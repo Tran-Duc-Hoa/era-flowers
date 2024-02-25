@@ -41,7 +41,6 @@ export default function Home() {
                         <p className="card-text text-primary">
                           {formatVND(item.price)}
                         </p>
-                        i
                       </div>
                     </div>
                   </div>
