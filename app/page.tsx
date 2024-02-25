@@ -22,7 +22,11 @@ export default function Home() {
 
           {FLOWER_TYPES.map((item) => (
             <section key={item.type} id={item.id} className={styles.section}>
-              <h2 className="text-center mb-3 from-red-to-amber">
+              <h2
+                className={
+                  "text-center mb-3 from-red-to-amber " + styles.heading
+                }
+              >
                 {item.name}
               </h2>
               <div className="row gy-3">
