@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 const Navbar = () => {
   return (
     <header className={styles.header}>
-      <div className="container-xxl d-flex align-items-center justify-content-between">
+      <div className={"container-xxl " + styles.content}>
         <nav className={"navbar navbar-expand-lg " + styles.navbar}>
           <div className="container-xxl">
             <a className="navbar-brand from-red-to-amber fs-1" href="/">
@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-        <div className="d-flex gap-2 align-items-center">
+        <div className="d-none d-xl-flex gap-2 align-items-center">
           <a
             title="Era Flowers Page"
             className={styles.listItemLink}
