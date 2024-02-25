@@ -8,6 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.eraflowers.com"),
   title: "Era Flowers",
   description:
     "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     title: "Era Flowers",
     description:
       "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
+    url: "https://www.eraflowers.com",
     images: [
       {
         url: "/images/era-flowers.jpg",
@@ -29,7 +31,8 @@ export const metadata: Metadata = {
         height: 600,
         alt: "Era Flowers"
       }
-    ]
+    ],
+    locale: "vi_VN"
   }
 };
 
