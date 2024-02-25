@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Carousel from "app/components/Carousel";
+import Image from "next/image";
 import Bootstrap from "./Bootstrap";
 import { FLOWERS, FLOWER_TYPES } from "./constants";
 import styles from "./page.module.css";
@@ -29,17 +29,15 @@ export default function Home() {
                 {FLOWERS[item.type]?.map((item) => (
                   <div key={item.id} className="col-12 col-md-4 col-xl-3">
                     <div className="card">
-                      <img
-                        src={item.image}
-                        className={"card-img-top " + styles.cardImage}
-                        alt={item.name}
-                        loading="lazy"
-                      />
+                      <div className={"card-img-top " + styles.cardImage}>
+                        <Image fill src={item.image} alt={item.name} />
+                      </div>
                       <div className="card-body text-center">
                         <h5 className="card-title">{item.name}</h5>
                         <p className="card-text text-primary">
                           {formatVND(item.price)}
                         </p>
+                        i
                       </div>
                     </div>
                   </div>

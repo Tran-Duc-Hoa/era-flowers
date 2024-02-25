@@ -11,4 +11,5 @@
 
 .cardImage {
   height: 380px;
+  position: relative;
 }
