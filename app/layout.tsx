@@ -15,13 +15,26 @@ export const metadata: Metadata = {
   keywords: ["era flowers"],
   icons: [
     {
-      url: "/favicon.jpg",
-    },
+      url: "/favicon.jpg"
+    }
   ],
+  openGraph: {
+    title: "Era Flowers",
+    description:
+      "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
+    images: [
+      {
+        url: "/images/era-flowers.jpg",
+        width: 800,
+        height: 600,
+        alt: "Era Flowers"
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
