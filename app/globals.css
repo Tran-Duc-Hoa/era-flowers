@@ -3,6 +3,17 @@
   --tw-gradient-to: #f59e0b;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 75px;
+}
+
 .from-red-to-amber {
   background-image: linear-gradient(
     to right,
@@ -16,4 +27,16 @@
 
 p {
   margin-bottom: 0 !important;
+}
+
+.nav-link.active:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-from),
+    var(--tw-gradient-to)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  transform: 0.3s;
 }

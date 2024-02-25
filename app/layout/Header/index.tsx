@@ -23,22 +23,26 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="#wedding-section"
+                  >
                     Hoa cưới
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link active" href="#birthday-section">
                     Hoa sinh nhật / khai trương
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link active" href="#funeral-section">
                     Hoa viếng
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link active" href="#fruit-basket-section">
                     Giỏ hoa trái cây
                   </a>
                 </li>

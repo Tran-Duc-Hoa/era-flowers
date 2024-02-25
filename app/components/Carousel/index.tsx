@@ -5,7 +5,7 @@ const Carousel = () => {
   return (
     <div
       id="carouselExample"
-      className={"carousel slide overflow-hidden mb-5 " + styles.carousel}
+      className={"carousel slide overflow-hidden " + styles.carousel}
     >
       <div className="carousel-inner h-100">
         <div className="carousel-item h-100 active">
