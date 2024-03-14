@@ -1,7 +1,7 @@
 import { BIRTHDAY_FLOWERS } from "./birthday-flowers";
 import { FRUIT_BASKET_FLOWERS } from "./fruit-basket-flowers";
 import { FUNERAL_FLOWERS } from "./funeral-flowers";
-import { WEDDING_FLOWERS } from "./wedding-flowers";
+import { HAPPY_FLOWERS } from "./happy-flowers";
 
 export interface Flower {
   id: string;
@@ -11,18 +11,28 @@ export interface Flower {
 }
 
 export const FLOWER_TYPES = [
-  { id: "wedding-section", type: "WEDDING", name: "HOA CƯỚI" },
   {
     id: "birthday-section",
     type: "BIRTHDAY",
-    name: "HOA SINH NHẬT / KHAI TRƯƠNG"
+    name: "HOA SINH NHẬT",
+    href: "/hoa-sinh-nhat"
   },
-  { id: "funeral-section", type: "FUNERAL", name: "HOA VIẾNG" },
-  { id: "fruit-basket-section", type: "FRUIT_BASKET", name: "GIỎ HOA TRÁI CÂY" }
+  {
+    id: "happy-section",
+    type: "HAPPY",
+    name: "HOA CHÚC MỪNG",
+    href: "/hoa-chuc-mung"
+  },
+  {
+    id: "fruit-basket-section",
+    type: "FRUIT_BASKET",
+    name: "GIỎ HOA TRÁI CÂY",
+    href: "/gio-hoa-trai-cay"
+  }
 ];
 
 export const FLOWERS: { [key: string]: Flower[] } = {
-  WEDDING: WEDDING_FLOWERS,
+  HAPPY: HAPPY_FLOWERS,
   BIRTHDAY: BIRTHDAY_FLOWERS,
   FUNERAL: FUNERAL_FLOWERS,
   FRUIT_BASKET: FRUIT_BASKET_FLOWERS

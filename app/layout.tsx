@@ -1,8 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import Footer from "app/layout/Footer";
 import Header from "app/layout/Header";
+import Bootstrap from "./Bootstrap";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,8 +47,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        {children}
+        <main>
+          <div className="container-xxl">{children}</div>
+        </main>
+
         <Footer />
+        <Bootstrap />
       </body>
     </html>
   );

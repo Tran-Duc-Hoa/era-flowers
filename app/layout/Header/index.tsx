@@ -1,3 +1,4 @@
+import { FLOWER_TYPES } from "@/app/constants";
 import { FaFacebook, FaPhone } from "react-icons/fa";
 import styles from "./Header.module.scss";
 
@@ -23,30 +24,17 @@ const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    href="#wedding-section"
-                  >
-                    Hoa cưới
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link active" href="#birthday-section">
-                    Hoa sinh nhật / khai trương
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link active" href="#funeral-section">
-                    Hoa viếng
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link active" href="#fruit-basket-section">
-                    Giỏ hoa trái cây
-                  </a>
-                </li>
+                {FLOWER_TYPES.map((item) => (
+                  <li className="nav-item" key={item.id}>
+                    <a
+                      className={"nav-link active " + styles.navLink}
+                      aria-current="page"
+                      href={item.href}
+                    >
+                      {item.name.toLowerCase()}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
