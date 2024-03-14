@@ -6,6 +6,7 @@ import { formatVND } from "app/utils";
 import styles from "./styles.module.scss";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.eraflowers.com"),
   title: "Giỏ hoa trái cây - Era Flowers",
   description: "Giỏ hoa trái cây",
   authors: [{ name: "Era Flowers" }],
