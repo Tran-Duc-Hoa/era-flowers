@@ -11,11 +11,6 @@ export const metadata: Metadata = {
   description: "Giỏ hoa trái cây",
   authors: [{ name: "Era Flowers" }],
   keywords: ["era flowers", "Giỏ hoa trái cây"],
-  icons: [
-    {
-      url: "/favicon.jpg"
-    }
-  ],
   openGraph: {
     title: "Giỏ hoa trái cây",
     description: "Giỏ hoa trái cây",

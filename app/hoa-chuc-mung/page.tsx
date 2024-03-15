@@ -11,11 +11,6 @@ export const metadata: Metadata = {
   description: "Hoa chúc mừng",
   authors: [{ name: "Era Flowers" }],
   keywords: ["era flowers", "Hoa chúc mừng"],
-  icons: [
-    {
-      url: "/favicon.jpg"
-    }
-  ],
   openGraph: {
     title: "Hoa chúc mừng",
     description: "Hoa chúc mừng",
