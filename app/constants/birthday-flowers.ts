@@ -42,12 +42,6 @@ export const BIRTHDAY_FLOWERS = [
     image: "/birthday-flowers/aa21460694c9389761d8.jpg"
   },
   {
-    id: "c5fd976d5fa2f3fcaab3",
-    name: "",
-    price: 0,
-    image: "/birthday-flowers/c5fd976d5fa2f3fcaab3.jpg"
-  },
-  {
     id: "c7098ee15c2ef070a93f",
     name: "",
     price: 0,
