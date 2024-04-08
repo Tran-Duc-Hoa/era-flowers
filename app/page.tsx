@@ -60,37 +60,39 @@ export default async function Home({
       <div className={styles.main}>
         <div className="container-xxl">
           {q && (
-            <div className="row gy-3">
-              {flowers?.map((item: any) => (
-                <div key={item.id} className="col-12 col-md-4 col-xl-3">
-                  <div className={"card " + styles.card}>
-                    <div className={"card-img-top " + styles.cardImage}>
-                      <Image
-                        width={300}
-                        height={380}
-                        src={item.image}
-                        alt={item.title}
-                      />
-                    </div>
-                    {item.title && (
-                      <div className="card-body text-center">
-                        <h5 className="card-title">{item.title}</h5>
-                        {item.price > 0 && (
-                          <p className="card-text text-primary">
-                            {formatVND(item.price)}
-                          </p>
-                        )}
+            <div className="pt-5">
+              <div className="row gy-3">
+                {flowers?.map((item: any) => (
+                  <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                    <div className={"card " + styles.card}>
+                      <div className={"card-img-top " + styles.cardImage}>
+                        <Image
+                          width={300}
+                          height={380}
+                          src={item.image}
+                          alt={item.title}
+                        />
                       </div>
-                    )}
+                      {item.title && (
+                        <div className="card-body text-center">
+                          <h5 className="card-title">{item.title}</h5>
+                          {item.price > 0 && (
+                            <p className="card-text text-primary">
+                              {formatVND(item.price)}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-              {flowers.length === 0 && (
-                <div className="text-center p-5">
-                  <BsFillEmojiSmileFill fontSize={50} />
-                  <p>Không tìm thấy kết quả</p>
-                </div>
-              )}
+                ))}
+                {flowers.length === 0 && (
+                  <div className="text-center p-5">
+                    <BsFillEmojiSmileFill fontSize={50} />
+                    <p>Không tìm thấy kết quả</p>
+                  </div>
+                )}
+              </div>
             </div>
           )}
           {!q &&
