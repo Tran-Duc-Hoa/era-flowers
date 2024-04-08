@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 };
 
 const fetchData = async () => {
-  return await fetch(`${process.env.API_URL}/posts?type=WAX`).then((res) =>
-    res.json()
-  );
+  return await fetch(`${process.env.API_URL}/posts?type=WAX`, {
+    next: { revalidate: 60 }
+  }).then((res) => res.json());
 };
 
 export default async function BirthdayFlowerPage() {

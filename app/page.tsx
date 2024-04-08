@@ -10,17 +10,22 @@ const query = "limit=8";
 const API_URL = process.env.API_URL;
 const fetchData = async () => {
   const birthdayFlowers = await fetch(
-    `${API_URL}/posts?type=BIRTHDAY&${query}`
+    `${API_URL}/posts?type=BIRTHDAY&${query}`,
+    { next: { revalidate: 60 } }
   ).then((res) => res.json());
-  const weddingFlowers = await fetch(
-    `${API_URL}/posts?type=WEDDING&${query}`
-  ).then((res) => res.json());
-  const openingFlowers = await fetch(
-    `${API_URL}/posts?type=OPENING&${query}`
-  ).then((res) => res.json());
-  const waxFlowers = await fetch(`${API_URL}/posts?type=WAX&${query}`).then(
-    (res) => res.json()
-  );
+
+  const weddingFlowers = await fetch(`${API_URL}/posts?type=WEDDING&${query}`, {
+    next: { revalidate: 60 }
+  }).then((res) => res.json());
+
+  const openingFlowers = await fetch(`${API_URL}/posts?type=OPENING&${query}`, {
+    next: { revalidate: 60 }
+  }).then((res) => res.json());
+
+  const waxFlowers = await fetch(`${API_URL}/posts?type=WAX&${query}`, {
+    next: { revalidate: 60 }
+  }).then((res) => res.json());
+
   const fruitBasketFlowers = await fetch(
     `${API_URL}/posts?type=FRUIT_BASKET&${query}`
   ).then((res) => res.json());
@@ -49,8 +54,6 @@ export default async function Home({
   } else {
     FLOWER_MAP = await fetchData();
   }
-
-  console.log("q", q);
 
   return (
     <>
