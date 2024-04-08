@@ -1,8 +1,7 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 
-import { formatVND } from "app/utils";
+import FlowerCard from "app/components/FlowerCard";
 import styles from "./styles.module.scss";
 
 export const metadata: Metadata = {
@@ -43,24 +42,7 @@ export default async function BirthdayFlowerPage() {
       </h2>
       {flowers?.map((item: any) => (
         <div key={item.id} className="col-12 col-md-4 col-xl-3">
-          <div className={"card " + styles.card}>
-            <div className={"card-img-top " + styles.cardImage}>
-              <Image
-                width={300}
-                height={380}
-                src={item.image}
-                alt={item.title}
-              />
-            </div>
-            <div className="card-body text-center">
-              <h5 className="card-title">{item.title}</h5>
-              {item.price > 0 && (
-                <p className="card-text text-primary">
-                  {formatVND(item.price)}
-                </p>
-              )}
-            </div>
-          </div>
+          <FlowerCard item={item} />
         </div>
       ))}
       {flowers?.length === 0 && (

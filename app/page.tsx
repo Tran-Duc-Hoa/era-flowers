@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 
+import FlowerCard from "app/components/FlowerCard";
 import { FLOWER_TYPES } from "./constants";
 import styles from "./page.module.css";
-import { formatVND } from "./utils";
 
 const query = "limit=8";
 
@@ -64,26 +63,7 @@ export default async function Home({
               <div className="row gy-3">
                 {flowers?.map((item: any) => (
                   <div key={item.id} className="col-12 col-md-4 col-xl-3">
-                    <div className={"card " + styles.card}>
-                      <div className={"card-img-top " + styles.cardImage}>
-                        <Image
-                          width={300}
-                          height={380}
-                          src={item.image}
-                          alt={item.title}
-                        />
-                      </div>
-                      {item.title && (
-                        <div className="card-body text-center">
-                          <h5 className="card-title">{item.title}</h5>
-                          {item.price > 0 && (
-                            <p className="card-text text-primary">
-                              {formatVND(item.price)}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </div>
+                    <FlowerCard item={item} />
                   </div>
                 ))}
                 {flowers.length === 0 && (
@@ -113,26 +93,7 @@ export default async function Home({
                   <div className="row gy-3">
                     {FLOWER_MAP[flowerType.type]?.map((item: any) => (
                       <div key={item.id} className="col-12 col-md-4 col-xl-3">
-                        <div className={"card " + styles.card}>
-                          <div className={"card-img-top " + styles.cardImage}>
-                            <Image
-                              width={300}
-                              height={380}
-                              src={item.image}
-                              alt={item.title}
-                            />
-                          </div>
-                          {item.title && (
-                            <div className="card-body text-center">
-                              <h5 className="card-title">{item.title}</h5>
-                              {item.price > 0 && (
-                                <p className="card-text text-primary">
-                                  {formatVND(item.price)}
-                                </p>
-                              )}
-                            </div>
-                          )}
-                        </div>
+                        <FlowerCard item={item} />
                       </div>
                     ))}
 
