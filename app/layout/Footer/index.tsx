@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FaFacebook, FaPhone } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 
@@ -9,7 +11,14 @@ const Footer = () => {
       <div className="container-xxl">
         <div className="row">
           <div className="col-12 col-md-6 col-xl-3">
-            <div className="fs-1 from-red-to-amber">Era Flowers</div>
+            <Link href="/" className={styles.logo}>
+              <Image
+                width={250}
+                height={60}
+                alt="Era Flowers"
+                src="/logo.jpg"
+              />
+            </Link>
           </div>
           <div className="col-12 col-md-6 col-xl-3">
             <h5>CHĂM SÓC KHÁCH HÀNG</h5>

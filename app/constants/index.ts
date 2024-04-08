@@ -18,16 +18,28 @@ export const FLOWER_TYPES = [
     href: "/hoa-sinh-nhat"
   },
   {
-    id: "happy-section",
-    type: "HAPPY",
-    name: "HOA CHÚC MỪNG",
-    href: "/hoa-chuc-mung"
+    id: "wedding-section",
+    type: "WEDDING",
+    name: "HOA CƯỚI",
+    href: "/hoa-cuoi"
+  },
+  {
+    id: "opening-section",
+    type: "OPENING",
+    name: "HOA KHAI TRƯƠNG",
+    href: "/hoa-khai-truong"
+  },
+  {
+    id: "wax-section",
+    type: "WAX",
+    name: "HOA SÁP",
+    href: "/hoa-sap"
   },
   {
     id: "fruit-basket-section",
     type: "FRUIT_BASKET",
-    name: "GIỎ HOA TRÁI CÂY",
-    href: "/gio-hoa-trai-cay"
+    name: "GIỎ TRÁI CÂY",
+    href: "/gio-trai-cay"
   }
 ];
 

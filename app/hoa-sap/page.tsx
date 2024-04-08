@@ -7,13 +7,13 @@ import styles from "./styles.module.scss";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eraflowers.com"),
-  title: "Hoa sinh nhật - Era Flowers",
-  description: "Hoa sinh nhật",
+  title: "Hoa sáp - Era Flowers",
+  description: "Hoa sáp",
   authors: [{ name: "Era Flowers" }],
-  keywords: ["era flowers", "Hoa sinh nhật"],
+  keywords: ["era flowers", "Hoa sáp"],
   openGraph: {
-    title: "Hoa sinh nhật",
-    description: "Hoa sinh nhật",
+    title: "Hoa sáp",
+    description: "Hoa sáp",
     url: "https://www.eraflowers.com",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const fetchData = async () => {
-  return await fetch(`${process.env.API_URL}/posts?type=BIRTHDAY`).then((res) =>
+  return await fetch(`${process.env.API_URL}/posts?type=WAX`).then((res) =>
     res.json()
   );
 };
@@ -39,7 +39,7 @@ export default async function BirthdayFlowerPage() {
   return (
     <div className="row gy-3 mt-3">
       <h2 className={"text-center my-2 from-red-to-amber " + styles.heading}>
-        HOA SINH NHẬT
+        HOA SÁP
       </h2>
       {flowers?.map((item: any) => (
         <div key={item.id} className="col-12 col-md-4 col-xl-3">

@@ -1,63 +1,149 @@
 import Image from "next/image";
-import { FLOWERS, FLOWER_TYPES } from "./constants";
-import styles from "./page.module.css";
+import { BsFillEmojiSmileFill } from "react-icons/bs";
 
-const formatVND = (number: number) => {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND"
-  }).format(number);
+import { FLOWER_TYPES } from "./constants";
+import styles from "./page.module.css";
+import { formatVND } from "./utils";
+
+const query = "limit=8";
+
+const API_URL = process.env.API_URL;
+const fetchData = async () => {
+  const birthdayFlowers = await fetch(
+    `${API_URL}/posts?type=BIRTHDAY&${query}`
+  ).then((res) => res.json());
+  const weddingFlowers = await fetch(
+    `${API_URL}/posts?type=WEDDING&${query}`
+  ).then((res) => res.json());
+  const openingFlowers = await fetch(
+    `${API_URL}/posts?type=OPENING&${query}`
+  ).then((res) => res.json());
+  const waxFlowers = await fetch(`${API_URL}/posts?type=WAX&${query}`).then(
+    (res) => res.json()
+  );
+  const fruitBasketFlowers = await fetch(
+    `${API_URL}/posts?type=FRUIT_BASKET&${query}`
+  ).then((res) => res.json());
+
+  return {
+    BIRTHDAY: birthdayFlowers,
+    WEDDING: weddingFlowers,
+    OPENING: openingFlowers,
+    WAX: waxFlowers,
+    FRUIT_BASKET: fruitBasketFlowers
+  };
 };
 
-export default function Home() {
+export default async function Home({
+  searchParams
+}: {
+  searchParams?: { [key: string]: string | string[] };
+}) {
+  let flowers = [];
+  let FLOWER_MAP: { [key: string]: any } = {};
+  const q = searchParams?.q;
+
+  if (q) {
+    flowers = await fetch(`${API_URL}/posts?q=${q}`).then((res) => res.json());
+    console.log("flowers", flowers);
+  } else {
+    FLOWER_MAP = await fetchData();
+  }
+
+  console.log("q", q);
+
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className="container-xxl">
-          {/* <Carousel /> */}
-
-          {FLOWER_TYPES.map((item) => (
-            <section key={item.type} id={item.id} className={styles.section}>
-              <h2
-                className={
-                  "text-center mb-3 from-red-to-amber " + styles.heading
-                }
-              >
-                {item.name}
-              </h2>
-              <div className="row gy-3">
-                {FLOWERS[item.type]?.slice(0, 8)?.map((item) => (
-                  <div key={item.id} className="col-12 col-md-4 col-xl-3">
-                    <div className={"card " + styles.card}>
-                      <div className={"card-img-top " + styles.cardImage}>
-                        <Image fill src={item.image} alt={item.name} />
+          {q && (
+            <div className="row gy-3">
+              {flowers?.map((item: any) => (
+                <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                  <div className={"card " + styles.card}>
+                    <div className={"card-img-top " + styles.cardImage}>
+                      <Image
+                        width={300}
+                        height={380}
+                        src={item.image}
+                        alt={item.title}
+                      />
+                    </div>
+                    {item.title && (
+                      <div className="card-body text-center">
+                        <h5 className="card-title">{item.title}</h5>
+                        {item.price > 0 && (
+                          <p className="card-text text-primary">
+                            {formatVND(item.price)}
+                          </p>
+                        )}
                       </div>
-                      {item.name && (
-                        <div className="card-body text-center">
-                          <h5 className="card-title">{item.name}</h5>
-                          {item.price > 0 && (
-                            <p className="card-text text-primary">
-                              {formatVND(item.price)}
-                            </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+              {flowers.length === 0 && (
+                <div className="text-center p-5">
+                  <BsFillEmojiSmileFill fontSize={50} />
+                  <p>Không tìm thấy kết quả</p>
+                </div>
+              )}
+            </div>
+          )}
+          {!q &&
+            FLOWER_TYPES.map((flowerType) => {
+              return (
+                <section
+                  key={flowerType.type}
+                  id={flowerType.id}
+                  className={styles.section}
+                >
+                  <h2
+                    className={
+                      "text-center mb-3 from-red-to-amber " + styles.heading
+                    }
+                  >
+                    {flowerType.name}
+                  </h2>
+                  <div className="row gy-3">
+                    {FLOWER_MAP[flowerType.type]?.map((item: any) => (
+                      <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                        <div className={"card " + styles.card}>
+                          <div className={"card-img-top " + styles.cardImage}>
+                            <Image
+                              width={300}
+                              height={380}
+                              src={item.image}
+                              alt={item.title}
+                            />
+                          </div>
+                          {item.title && (
+                            <div className="card-body text-center">
+                              <h5 className="card-title">{item.title}</h5>
+                              {item.price > 0 && (
+                                <p className="card-text text-primary">
+                                  {formatVND(item.price)}
+                                </p>
+                              )}
+                            </div>
                           )}
                         </div>
+                      </div>
+                    ))}
+
+                    <div className="d-flex justify-content-center">
+                      {FLOWER_MAP[flowerType.type]?.length > 8 && (
+                        <a href={flowerType.href} className="btn btn-primary">
+                          Xem tất cả
+                        </a>
                       )}
                     </div>
                   </div>
-                ))}
-
-                <div className="d-flex justify-content-center">
-                  {FLOWERS[item.type]?.length > 8 && (
-                    <a href={item.href} className="btn btn-primary">
-                      Xem tất cả
-                    </a>
-                  )}
-                </div>
-              </div>
-            </section>
-          ))}
+                </section>
+              );
+            })}
         </div>
-      </main>
+      </div>
     </>
   );
 }
