@@ -16,8 +16,8 @@ interface Props {
 const FlowerCard = ({ item }: Props) => {
   return (
     <div className={"card " + styles.card}>
-      <div className={"card-img-top " + styles.cardImage}>
-        <Image width={306} height={380} src={item.image} alt={item.title} />
+      <div className="card-img-top">
+        <Image width={306} height={320} src={item.image} alt={item.title} />
       </div>
       <div className="card-body text-center">
         <h5 className="card-title">{item.title}</h5>
