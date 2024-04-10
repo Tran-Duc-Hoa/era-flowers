@@ -4,7 +4,7 @@ import FlowerCard from "app/components/FlowerCard";
 import { FLOWER_TYPES } from "./constants";
 import styles from "./page.module.css";
 
-const query = "limit=8";
+const query = "limit=9";
 
 const API_URL = process.env.API_URL;
 const fetchData = async () => {
