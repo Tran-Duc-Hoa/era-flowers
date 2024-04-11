@@ -20,7 +20,9 @@ const FlowerCard = ({ item }: Props) => {
         <Image width={306} height={320} src={item.image} alt={item.title} />
       </div>
       <div className="card-body text-center">
-        <h5 className="card-title">{item.title}</h5>
+        <h5 className={"card-title " + styles.title} title={item.title}>
+          {item.title}
+        </h5>
         {item.price > 0 && (
           <p className="card-text text-primary">{formatVND(item.price)}</p>
         )}

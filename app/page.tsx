@@ -49,7 +49,6 @@ export default async function Home({
 
   if (q) {
     flowers = await fetch(`${API_URL}/posts?q=${q}`).then((res) => res.json());
-    console.log("flowers", flowers);
   } else {
     FLOWER_MAP = await fetchData();
   }
@@ -91,11 +90,13 @@ export default async function Home({
                     {flowerType.name}
                   </h2>
                   <div className="row gy-3">
-                    {FLOWER_MAP[flowerType.type]?.map((item: any) => (
-                      <div key={item.id} className="col-12 col-md-4 col-xl-3">
-                        <FlowerCard item={item} />
-                      </div>
-                    ))}
+                    {FLOWER_MAP[flowerType.type]
+                      ?.slice(0, 8)
+                      ?.map((item: any) => (
+                        <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                          <FlowerCard item={item} />
+                        </div>
+                      ))}
 
                     <div className="d-flex justify-content-center">
                       {FLOWER_MAP[flowerType.type]?.length > 8 && (
