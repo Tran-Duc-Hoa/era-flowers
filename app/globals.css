@@ -1,6 +1,8 @@
 :root {
   --tw-gradient-from: #ef4444;
   --tw-gradient-to: #f59e0b;
+
+  --ef-primary-color: #0d6efd;
 }
 
 *,

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const fetchData = async () => {
-  return await fetch(`${process.env.API_URL}/posts?type=WAX`, {
+  return await fetch(`${process.env.API_URL}/posts?type=FRUIT_BASKET`, {
     next: { revalidate: 60 }
   }).then((res) => res.json());
 };

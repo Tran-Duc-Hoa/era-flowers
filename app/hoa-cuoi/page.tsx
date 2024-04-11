@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const fetchData = async () => {
-  return await fetch(`${process.env.API_URL}/posts?type=wedding`, {
+  return await fetch(`${process.env.API_URL}/posts?type=WEDDING`, {
     next: { revalidate: 60 }
   }).then((res) => res.json());
 };
