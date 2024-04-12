@@ -16,6 +16,10 @@ export const FLOWER_OPTIONS = [
     value: "WAX"
   },
   {
+    label: "Hoa viếng",
+    value: "FUNERAL"
+  },
+  {
     label: "Giỏ trái cây",
     value: "FRUIT_BASKET"
   }

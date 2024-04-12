@@ -31,6 +31,12 @@ export const FLOWER_TYPES = [
     href: "/hoa-sap"
   },
   {
+    id: "funeral-section",
+    type: "FUNERAL",
+    name: "HOA VIẾNG",
+    href: "/hoa-vieng"
+  },
+  {
     id: "fruit-basket-section",
     type: "FRUIT_BASKET",
     name: "GIỎ TRÁI CÂY",

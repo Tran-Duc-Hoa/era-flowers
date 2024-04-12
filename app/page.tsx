@@ -25,6 +25,10 @@ const fetchData = async () => {
     next: { revalidate: 60 }
   }).then((res) => res.json());
 
+  const funeralFlowers = await fetch(`${API_URL}/posts?type=FUNERAL&${query}`, {
+    next: { revalidate: 60 }
+  }).then((res) => res.json());
+
   const fruitBasketFlowers = await fetch(
     `${API_URL}/posts?type=FRUIT_BASKET&${query}`
   ).then((res) => res.json());
@@ -34,6 +38,7 @@ const fetchData = async () => {
     WEDDING: weddingFlowers,
     OPENING: openingFlowers,
     WAX: waxFlowers,
+    FUNERAL: funeralFlowers,
     FRUIT_BASKET: fruitBasketFlowers
   };
 };
@@ -76,6 +81,8 @@ export default async function Home({
           )}
           {!q &&
             FLOWER_TYPES.map((flowerType) => {
+              if (!FLOWER_MAP[flowerType.type]?.length) return null;
+
               return (
                 <section
                   key={flowerType.type}
