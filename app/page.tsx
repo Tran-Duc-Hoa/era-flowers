@@ -4,29 +4,45 @@ import FlowerCard from "app/components/FlowerCard";
 import { FLOWER_TYPES } from "./constants";
 import styles from "./page.module.css";
 
+const jsonLd = {
+  "@context": "http://schema.org",
+  "@type": "Florist",
+  name: "Era Flowers",
+  description:
+    "Welcome to Era Flowers! We specialize in providing beautiful flowers for all occasions.",
+  url: "https://www.eraflowers.com",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "0903 984 134",
+    contactType: "customer service"
+  }
+};
+
 const query = "limit=9";
+
+const ONE_HOUR = 60 * 60;
 
 const API_URL = process.env.API_URL;
 const fetchData = async () => {
   const birthdayFlowers = await fetch(
     `${API_URL}/posts?type=BIRTHDAY&${query}`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: ONE_HOUR } }
   ).then((res) => res.json());
 
   const weddingFlowers = await fetch(`${API_URL}/posts?type=WEDDING&${query}`, {
-    next: { revalidate: 60 }
+    next: { revalidate: ONE_HOUR }
   }).then((res) => res.json());
 
   const openingFlowers = await fetch(`${API_URL}/posts?type=OPENING&${query}`, {
-    next: { revalidate: 60 }
+    next: { revalidate: ONE_HOUR }
   }).then((res) => res.json());
 
   const waxFlowers = await fetch(`${API_URL}/posts?type=WAX&${query}`, {
-    next: { revalidate: 60 }
+    next: { revalidate: ONE_HOUR }
   }).then((res) => res.json());
 
   const funeralFlowers = await fetch(`${API_URL}/posts?type=FUNERAL&${query}`, {
-    next: { revalidate: 60 }
+    next: { revalidate: ONE_HOUR }
   }).then((res) => res.json());
 
   const fruitBasketFlowers = await fetch(
@@ -118,6 +134,10 @@ export default async function Home({
             })}
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 }
