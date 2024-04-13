@@ -7,7 +7,8 @@ import styles from "./styles.module.scss";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eraflowers.com"),
   title: "Hoa sáp - Era Flowers",
-  description: "Hoa sáp",
+  description:
+    "Hoa sáp - Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
   authors: [{ name: "Era Flowers" }],
   keywords: ["era flowers", "Hoa sáp"],
   openGraph: {
