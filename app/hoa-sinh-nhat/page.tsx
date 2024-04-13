@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Hoa sinh nhật - Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
   authors: [{ name: "Era Flowers" }],
   keywords: ["era flowers", "Hoa sinh nhật"],
+  alternates: {
+    canonical: "https://www.eraflowers.com/hoa-sinh-nhat"
+  },
   openGraph: {
     title: "Hoa sinh nhật",
     description: "Hoa sinh nhật",

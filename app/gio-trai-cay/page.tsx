@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Giỏ hoa trái cây - Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
   authors: [{ name: "Era Flowers" }],
   keywords: ["era flowers", "Giỏ hoa trái cây"],
+  alternates: {
+    canonical: "https://www.eraflowers.com/gio-trai-cay"
+  },
   openGraph: {
     title: "Giỏ hoa trái cây",
     description: "Giỏ hoa trái cây",
