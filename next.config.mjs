@@ -29,10 +29,6 @@ const nextConfig = {
           {
             key: "X-XSS-Protection",
             value: "1; mode=block"
-          },
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600"
           }
         ]
       }

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     canonical: "https://www.eraflowers.com/hoa-vieng"
   },
   openGraph: {
+    type: "website",
     title: "Hoa viếng",
     description: "Hoa viếng",
     url: "https://www.eraflowers.com",
@@ -87,7 +88,6 @@ export default async function BirthdayFlowerPage() {
         )}
       </div>
       <script
-        async
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
