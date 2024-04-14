@@ -135,6 +135,7 @@ export default async function Home({
         </div>
       </div>
       <script
+        async
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

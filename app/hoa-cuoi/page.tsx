@@ -87,6 +87,7 @@ export default async function BirthdayFlowerPage() {
         )}
       </div>
       <script
+        async
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

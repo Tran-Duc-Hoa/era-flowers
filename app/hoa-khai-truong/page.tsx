@@ -72,7 +72,7 @@ export default async function BirthdayFlowerPage() {
             "fs-2 text-center my-2 from-red-to-amber " + styles.heading
           }
         >
-          HOA CHÚC MỪNG
+          HOA KHAI TRƯƠNG
         </h1>
         {flowers?.map((item: any) => (
           <div key={item.id} className="col-12 col-md-4 col-xl-3">
@@ -87,6 +87,7 @@ export default async function BirthdayFlowerPage() {
         )}
       </div>
       <script
+        async
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
