@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 
 import FlowerCard from "app/components/FlowerCard";
@@ -82,7 +83,10 @@ export default async function Home({
             <div className="pt-5">
               <div className="row gy-3">
                 {flowers?.map((item: any) => (
-                  <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                  <div
+                    key={item.id}
+                    className="col-12 col-md-6 col-lg-4 col-xl-3"
+                  >
                     <FlowerCard item={item} />
                   </div>
                 ))}
@@ -116,7 +120,10 @@ export default async function Home({
                     {FLOWER_MAP[flowerType.type]
                       ?.slice(0, 8)
                       ?.map((item: any) => (
-                        <div key={item.id} className="col-12 col-md-4 col-xl-3">
+                        <div
+                          key={item.id}
+                          className="col-12 col-md-6 col-lg-4 col-xl-3"
+                        >
                           <FlowerCard item={item} />
                         </div>
                       ))}
@@ -134,8 +141,8 @@ export default async function Home({
             })}
         </div>
       </div>
-      <script
-        async
+      <Script
+        id="home-script"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
