@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Hoa sáp",
     description: "Hoa sáp",
-    url: "https://www.eraflowers.com",
+    url: "https://www.eraflowers.com/hoa-sap",
     images: [
       {
         url: "/images/era-flowers.jpg",

@@ -6,19 +6,19 @@ import styles from "./styles.module.scss";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.eraflowers.com"),
-  title: "Giỏ hoa trái cây - Era Flowers",
+  title: "Hoa cưới - Era Flowers",
   description:
-    "Giỏ hoa trái cây - Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
+    "Hoa cưới - Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
   authors: [{ name: "Era Flowers" }],
-  keywords: ["era flowers", "Giỏ hoa trái cây"],
+  keywords: ["era flowers", "Hoa cưới"],
   alternates: {
     canonical: "https://www.eraflowers.com/hoa-cuoi"
   },
   openGraph: {
     type: "website",
-    title: "Giỏ hoa trái cây",
-    description: "Giỏ hoa trái cây",
-    url: "https://www.eraflowers.com",
+    title: "Hoa cưới",
+    description: "Hoa cưới",
+    url: "https://www.eraflowers.com/hoa-cuoi",
     images: [
       {
         url: "/images/era-flowers.jpg",
