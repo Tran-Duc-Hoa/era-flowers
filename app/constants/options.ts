@@ -1,26 +1,26 @@
 export const FLOWER_OPTIONS = [
   {
-    label: "Hoa sinh nhật",
-    value: "BIRTHDAY"
+    label: 'Hoa sinh nhật',
+    value: 'BIRTHDAY'
   },
   {
-    label: "Hoa cưới",
-    value: "WEDDING"
+    label: 'Hoa cưới',
+    value: 'WEDDING'
   },
   {
-    label: "Hoa khai trương",
-    value: "OPENING"
+    label: 'Hoa khai trương',
+    value: 'OPENING'
   },
   {
-    label: "Hoa sáp",
-    value: "WAX"
+    label: 'Hoa sáp',
+    value: 'WAX'
   },
   {
-    label: "Hoa viếng",
-    value: "FUNERAL"
+    label: 'Hoa viếng',
+    value: 'FUNERAL'
   },
   {
-    label: "Giỏ trái cây",
-    value: "FRUIT_BASKET"
+    label: 'Giỏ trái cây',
+    value: 'FRUIT_BASKET'
   }
 ];

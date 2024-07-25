@@ -1,44 +1,43 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
-import Footer from "app/layout/Footer";
-import Header from "app/layout/Header";
-import Bootstrap from "./Bootstrap";
-import "./globals.css";
+import Footer from 'app/layout/Footer';
+import Header from 'app/layout/Header';
+import Bootstrap from './Bootstrap';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.eraflowers.com"),
-  title: "Era Flowers",
-  description:
-    "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
-  authors: [{ name: "Era Flowers" }],
-  keywords: ["era flowers"],
+  metadataBase: new URL('https://www.eraflowers.com'),
+  title: 'Era Flowers',
+  description: 'Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.',
+  authors: [{ name: 'Era Flowers' }],
+  keywords: ['era flowers'],
   alternates: {
-    canonical: "https://www.eraflowers.com"
+    canonical: 'https://www.eraflowers.com'
   },
   icons: [
     {
-      url: "/favicon.jpg"
+      url: '/favicon.jpg'
     }
   ],
   openGraph: {
-    type: "website",
-    title: "Era Flowers",
-    description:
-      "Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.",
-    url: "https://www.eraflowers.com",
+    type: 'website',
+    title: 'Era Flowers',
+    description: 'Era Flowers is a flower shop in the heart of the city. We offer a wide range of flowers for all occasions.',
+    url: 'https://www.eraflowers.com',
     images: [
       {
-        url: "/images/era-flowers.jpg",
+        url: '/images/era-flowers.jpg',
         width: 800,
         height: 600,
-        alt: "Era Flowers"
+        alt: 'Era Flowers'
       }
     ],
-    locale: "vi_VN"
+    locale: 'vi_VN'
   }
 };
 
@@ -57,6 +56,7 @@ export default function RootLayout({
 
         <Footer />
         <Bootstrap />
+        <Analytics />
       </body>
     </html>
   );
